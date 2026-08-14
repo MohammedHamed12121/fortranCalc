@@ -1,27 +1,25 @@
 program Calc
   implicit none
 
-  integer :: a,b
   character :: choise
   logical :: running
   logical :: askingValid
+  integer :: numbers(2)
+
   running = .true.
   askingValid = .true.
 
   do while(running)
-    print *, "Enter first number"
-    read *, a
-    
-    print *, "Enter second number"
-    read *, b
-    
-    print *, "Sum of ", a, " And ", b, " is ", sum(a,b)
-    print *, "Sub of ", a, " And ", b, " is ", sub(a,b)
-    print *, "Mult of ", a, " And ", b, " is ", mul(a,b)
-    if(div(a,b) == 0) then
+    print *, "Enter 2 numbers"
+    read * , numbers
+
+    print *, "Sum of ", numbers(1), " And ", numbers(2), " is ", sum(numbers(1), numbers(2))
+    print *, "Sub of ", numbers(1), " And ", numbers(1), " is ", sub(numbers(1), numbers(2))
+    print *, "Mult of ", numbers(1), " And ", numbers(1), " is ", mul(numbers(1), numbers(2))
+    if(div(numbers(1), numbers(2)) == 0) then
       print *, "The Second number can't be less than zero"
     else
-      print *, "Div of ", a, " And ", b, " is ", div(a,b)
+      print *, "Div of ", numbers(1), " And ", numbers(2), " is ", div(numbers(1), numbers(2))
     end if
 
     askingValid = .true.
